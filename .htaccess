@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} !www.simon-pizonka.de$ [NC]
+RewriteRule ^(.*)$ http://www.simon-pizonka.de/$1 [L,R=301]
+
+RewriteBase /urlshorter/
+RewriteRule ^([a-zA-Z0-9_-]+)$ redirect.php?alias=$1 [R,L]
